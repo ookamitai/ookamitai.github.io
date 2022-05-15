@@ -39,10 +39,10 @@
 		$('body').terminal({
 			whoami: function () {
 				this.echo('My name is Bian Junsen and I\'m currently in my second year in junior high school.\n' +
-                'I now live in Nanjing, China and plans to go abroad for further study.');
+                'I now live in Nanjing, China and plans to go abroad for further study.\n');
 			},
 			credits: function () {
-				this.echo('Powered by jQuery.');
+				this.echo('Powered by jQuery.\n');
 			},
             get_pkg: function (pkgname) {
 				this.echo('Package name: ' + pkgname);
@@ -53,13 +53,13 @@
 					this.echo('Available packages:\ncrex\n');
 				} else {
 					this.echo('Package not found!');
-					this.echo('Please use \'get_pkg -list\' to view a list of available')
+					this.echo('Please use \'get_pkg -list\' to view a list of available packages.\n')
 				}
 			},
 			help: function () {
 				this.echo('whoami - a brief introduction of me! \n'+
-                'credits - show credits. \n'+
-                "get_pkg [pkgname] - retrieve a package");
+                'credits - show credits\n'+
+                "get_pkg [pkgname] - retrieve a package\n");
 			},
             
 		}, {
