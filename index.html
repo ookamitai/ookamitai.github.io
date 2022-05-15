@@ -29,37 +29,46 @@
 
 		.terminal,
 		span {
-			--size: 1.4;
+			--size: 1.2;
 		}
 	</style>
 </head>
 
 <body>
 	<script>
+		var pkg_list = ["crex", ""]
 		$('body').terminal({
 			whoami: function () {
 				this.echo('My name is Bian Junsen and I\'m currently in my second year in junior high school.\n' +
-                'I now live in Nanjing, China and plans to go abroad for further study.\n');
+                'I now live in Nanjing, China and plans to go abroad for further study.\n' +
+                'In my spare time, I casually make song covers with virtual singers.\n' +
+				"If you are interested in it, you can click the link below to check it out!\n" +
+				"https://space.bilibili.com/284102617/");
 			},
 			credits: function () {
-				this.echo('Powered by jQuery.\n');
+				this.echo('Powered by jQuery.');
 			},
             get_pkg: function (pkgname) {
-				this.echo('Package name: ' + pkgname);
-                if (pkgname.toLowerCase() == "crex") {
+				//this.echo('Arguments: ' + pkgname);
+				if (typeof str == "string"){
+					pkgname = pkgname.toLowerCase()
+				}
+                if (pkg_list.includes(pkgname)) {
                     this.echo('Retrieving package...');
-                    window.open("https://github.com/ookamitai/cREX/releases/tag/v0.1b", "_blank");
-                } else if (pkgname.toLowerCase() == '-list'){
+					if (pkgname == "crex"){
+					window.open("https://github.com/ookamitai/cREX/releases/tag/v0.1b", "_blank");
+					}
+                } else if (pkgname == '-list'){
 					this.echo('Available packages:\ncrex\n');
 				} else {
 					this.echo('Package not found!');
-					this.echo('Please use \'get_pkg -list\' to view a list of available packages.\n')
+					this.echo('Please use \'get_pkg -list\' to view a list of available')
 				}
 			},
 			help: function () {
 				this.echo('whoami - a brief introduction of me! \n'+
-                'credits - show credits\n'+
-                "get_pkg [pkgname] - retrieve a package\n");
+                'credits - show credits. \n'+
+                "get_pkg [pkgname] - retrieve a package");
 			},
             
 		}, {
