@@ -42,8 +42,9 @@
 
 <body>
 	<script>
-		var pkg_list = {"crex": "https://github.com/ookamitai/cREX/releases/tag/v0.1b"};
+		var pkg_list = {"crex": "https://github.com/ookamitai/cREX/releases/"};
 		var username = "Guest"
+		let curDate = new Date();
 
 		$('body').terminal({
 			whoami: function () {
@@ -82,15 +83,20 @@
 				this.echo('whoami - a brief introduction of myself! \n' +
                 'credits - show credits \n' +
                 "get_pkg [pkgname] - retrieve a package \n" +
-				"echo - print out strings on the screen \n"+
-				"clear - clear the screen");
+				"echo - print out strings on screen \n"+
+				"clear - clear the screen \n"+
+				"update - show update log");
 			},
 
+			update: function () {
+				this.echo("5/15 Added TAB completion.")
+			}
 		}, 
 		{greetings: 'Welcome to ookamitai\'s webpage!\nUse \'help\' for a list of commands.\nLogin time: ' + Date() + "\n", 
-		prompt: '[' + username + ']> ', 
-		completion: ['whoami', 'credits', 'get_pkg', 'clear', 'help', 'echo'],
+		prompt: '[' + username + '@' + (curDate.getHours()*3600 + curDate.getMinutes()*60 + curDate.getSeconds()).toString(16).toUpperCase() + ']> ', 
+		completion: ['whoami', 'credits', 'get_pkg', 'clear', 'help', 'echo', 'update'],
 		autocompleteMenu: false});
+
 	</script>
 </body>
 
