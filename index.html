@@ -43,9 +43,16 @@
 <body>
 	<script>
 		var pkg_list = {"crex": "https://github.com/ookamitai/cREX/releases/"};
-		var username = "Guest"
+		var username = "Guest";
 		let curDate = new Date();
+		function randomNumber(min, max) { 
+    		return Math.floor(Math.random() * (max - min) + min);
+		} 
 
+		var quoteid = randomNumber(1, 100000);
+		if (quoteid % 7 == 5){
+			quoteid = "Hi, I'm ookamitai, with love.";
+		}
 		$('body').terminal({
 			whoami: function () {
 				this.echo('My name is Bian Junsen and I\'m currently in my second year in junior high school.\n' +
@@ -89,10 +96,11 @@
 			},
 
 			update: function () {
-				this.echo("5/15 Added TAB completion.")
+				this.echo("5/15 Added TAB completion.\n"+
+				"5/17 Added NOD (Number Of the Day) for future purposes :3")
 			}
 		}, 
-		{greetings: 'Welcome to ookamitai\'s webpage!\nUse \'help\' for a list of commands.\nLogin time: ' + Date() + "\n", 
+		{greetings: 'Welcome to ookamitai\'s webpage!\nUse \'help\' for a list of commands.\nLogin time: ' + Date() + "\n\nNumber of the day: " + quoteid + "\n", 
 		prompt: '[' + username + '@' + (curDate.getHours()*3600 + curDate.getMinutes()*60 + curDate.getSeconds()).toString(16).toUpperCase() + ']> ', 
 		completion: ['whoami', 'credits', 'get_pkg', 'clear', 'help', 'echo', 'update'],
 		autocompleteMenu: false});
