@@ -50,7 +50,7 @@
 		} 
 
 		var quoteid = randomNumber(1, 100000);
-		if (quoteid % 7 == 5){
+		if (quoteid % 17 == 5){
 			quoteid = "Hi, I'm ookamitai, with love.";
 		}
 		$('body').terminal({
@@ -78,7 +78,7 @@
 					this.echo('Available packages:\n' + Object.keys(pkg_list));
 				} else {
 					this.echo('Package not found!');
-					this.echo('Please use \'get_pkg -list\' to view a list of available')
+					this.echo('Please use \'get_pkg -list\' to view a list of available packages.')
 				}
 			},
 
