@@ -58,9 +58,9 @@
 		$('body').terminal({
 			whoami: function () {
 				this.echo('My name is Bian Junsen and I\'m currently in my second year in junior high school.\n' +
-                'I am now living in Nanjing, China and plans to go abroad for further studying.\n' +
+                'I now live in Nanjing, China and plans to go abroad for further study.\n' +
                 'In my spare time, I casually make song covers with virtual singers.\n' +
-				"If you are interested in it, you can click on the link below to check it out!\n" +
+				"If you are interested in it, you can click the link below to check it out!\n" +
 				"https://space.bilibili.com/284102617/");
 			},
 
@@ -68,19 +68,19 @@
 				this.echo('Powered by jQuery.');
 			},
 
-            get_pkg: function (pkgname) {
+            fetch: function (fname) {
 				if (typeof str == "string"){
-					pkgname = pkgname.toLowerCase()
+					fname = fname.toLowerCase()
 				}
-                if (pkgname in pkg_list) {
-                    this.echo('Retrieving package...');
-					window.open(pkg_list[pkgname], "_blank");
+                if (fname in pkg_list) {
+                    this.echo('Retrieving file...');
+					window.open(pkg_list[fname], "_blank");
 					this.echo('Opened the page in a new tab.');
-                } else if (pkgname == '-list'){
-					this.echo('Available packages:\n' + Object.keys(pkg_list));
+                } else if (fname == '-list'){
+					this.echo('Available files:\n' + Object.keys(pkg_list));
 				} else {
-					this.echo('Package not found!');
-					this.echo('Please use \'get_pkg -list\' to view a list of available packages.')
+					this.echo('File not found!');
+					this.echo('Please use \'fetch -list\' to view a list of available files.')
 				}
 			},
 
@@ -91,7 +91,7 @@
 			help: function () {
 				this.echo('whoami - a brief introduction of myself! \n' +
                 'credits - show credits \n' +
-                "get_pkg [pkgname] - retrieve a package \n" +
+                "fetch [fname] - retrieve a file \n" +
 				"echo - print out strings on the screen \n"+
 				"clear - clear the screen \n"+
 				"update - show update log");
@@ -104,7 +104,7 @@
 		}, 
 		{greetings: 'Welcome to ookamitai\'s webpage!\nUse \'help\' for a list of commands.\nLogin time: ' + Date() + "\n\nNumber of the day: " + quoteid + "\n", 
 		prompt: '[' + username + '@' + (curDate.getHours()*3600 + curDate.getMinutes()*60 + curDate.getSeconds()).toString(16).toUpperCase() + ']> ', 
-		completion: ['whoami', 'credits', 'get_pkg', 'clear', 'help', 'echo', 'update'],
+		completion: ['whoami', 'credits', 'fetch', 'clear', 'help', 'echo', 'update'],
 		autocompleteMenu: false});
 
 	</script>
