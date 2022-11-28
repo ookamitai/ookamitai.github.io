@@ -53,7 +53,21 @@
 		} 
 
 		var quoteid = randomNumber(1, 100000);
-		greet = "-> New arkwork has come out! Download png and psd by executing:\n    fetch art\n\n"
+		function GetURLParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+		greet = GetUrlParameter('fetch");
+		greet += "-> New arkwork has come out! Download png and psd by executing:\n    fetch art\n\n"
 		greet += '->To whoever (found this website and) wanted to download my voicebank:\n' + 'This voicebank is not finished yet! I have a date in my mind, which is about Jan 1st, 2023, to officially release it. \nEVERYTHING from recordings and artworks will or may change drastically!\n\n' + 'Welcome to ookamitai\'s webpage!\nUse \'help\' for a list of commands.\nLogin time: ' + Date() + "\n\nNumber of the day: " + quoteid + "\n"
 		
 		
