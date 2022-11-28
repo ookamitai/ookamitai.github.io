@@ -67,7 +67,7 @@
 	}
 		var command = GetURLParameter('fetch');
 		var quoteid = randomNumber(1, 100000);
-		if (command != undefined){
+		if (typeof command != "undefined"){
 			var greet = command;
 		}
 		greet += "-> New arkwork has come out! Download png and psd by executing:\n    fetch art\n\n"
