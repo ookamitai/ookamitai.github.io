@@ -26,10 +26,12 @@
 "https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" />
 
 	<style type="text/css">
+	
 		.terminal,
 		span,
 		.cmd,
 		div {
+			font-family: monospace;
 			--color: rgb(255, 255, 255);
 		}
 
@@ -37,11 +39,14 @@
 		span {
 			--size: 1.4;
 		}
+
 	</style>
 </head>
 
 <body>
 	<script>
+	
+
 		var pkg_list = {"crex": "https://github.com/ookamitai/cREX/releases/", 
 						"vb_d_karojpn_quiet": "https://drive.google.com/file/d/1LOCQRmmFGH-HdmgVXcqQIVitpknV_VpL",
 			       		"bfv": "https://github.com/ookamitai/bfv",
@@ -65,24 +70,27 @@
         }
     }
 	}
+		var command = GetURLParameter('autofetch');
 		var quoteid = randomNumber(1, 100000);
-		var greet = "";
+		if (typeof command != "undefined"){
+			command = command.toLowerCase();
+			if (command in pkg_list){
+				window.open(pkg_list[command], '_blank').focus();
+				var greet = "Requested page opened in a new tab.\n\n";
+			} else {
+				var greet = "Requested page does not exist.\n\n";
+			}
+		} else {
+			var greet = "";
+		}
 		greet += "-> New arkwork has come out! Download png and psd by executing:\n    fetch art\n\n"
-		greet += '-> To whoever (found this website and) wanted to download my voicebank:\n' + 'This voicebank is not finished yet! I have a date in my mind, which is about Jan 1st, 2023, to officially release it. \nEVERYTHING from recordings and artworks will or may change drastically!\n\n' + 'Welcome to ookamitai\'s webpage!\nUse \'help\' for a list of commands.\nLogin time: ' + Date() + "\n\nNumber of the day: " + quoteid + "\n"
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		greet += '->To whoever (found this website and) wanted to download my voicebank:\n' + 'This voicebank is not finished yet! I have a date in my mind, which is about Jan 1st, 2023, to officially release it. \nEVERYTHING from recordings and artworks will or may change drastically!\n\n' + 'Welcome to ookamitai\'s webpage!\nUse \'help\' for a list of commands.\nLogin time: ' + Date() + "\n\nNumber of the day: " + quoteid + "\n"
 		
 		
 		if (quoteid % 7 == 5){
 			quoteid = "Hi, I'm ookamitai, with love.";
 		}
+
 		$('body').terminal({
 			whoami: function () {
 				this.echo('My name is ookamitai(狼太) and I\'m currently in my third year in junior high school.\n' +
@@ -94,6 +102,7 @@
 
 			credits: function () {
 				this.echo('Powered by jQuery.');
+
 			},
 
             fetch: function (fname) {
