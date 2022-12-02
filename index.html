@@ -75,8 +75,8 @@
 		if (typeof command != "undefined"){
 			command = command.toLowerCase();
 			if (command in pkg_list){
-				var greet = "Requested page opened in a new tab.\n\n";
-				greet = pkg_list[command];
+				var greet = "Requested page -> ";
+				greet += pkg_list[command] + "\n\n";
 			} else {
 				var greet = "Requested page does not exist.\n\n";
 			}
