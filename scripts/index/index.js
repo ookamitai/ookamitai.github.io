@@ -14,6 +14,15 @@ async function randomBlinkWrapper() {
     randomBlink();
 }
 
+function bg() {
+    document.querySelector('body').style.backdropFilter = "blur(3px)";
+}
+
+async function bgWrapper() {
+    await timeout(1000);
+    bg();
+}
+
 function turnOnNeon() {
     const element = document.querySelector('#name-box');
     setTimeout(() => {
@@ -79,7 +88,7 @@ function toggle() {
         } else {
             m.style.opacity = 0;
             t.textContent = "[Flashlight OFF]";
-            t.style.opacity = "0.1";
+            t.style.opacity = "0.3";
         }
     });
 }
@@ -146,6 +155,17 @@ function setupbs() {
     });
 }
 
+function question() {
+    const over = document.querySelector("#overlay");
+    over.textContent += "THE SCREAMS OF THE DOOMED\n";
+}
+
+function setQ() {
+    document.querySelector("#elipses").addEventListener("click", () => {
+        question();
+    });
+}
+
 
 window.addEventListener('load', () => { 
     turnOnNeon();
@@ -156,4 +176,6 @@ window.addEventListener('load', () => {
     entry();
     cc();
     setupbs();
+    bgWrapper();
+    setQ();
 });

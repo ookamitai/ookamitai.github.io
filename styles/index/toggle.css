@@ -5,7 +5,7 @@
 
 #toggle-text {
     color: rgba(255, 255, 255);
-    opacity: 0.1;
+    opacity: 0.3;
     font-family: "Space Mono", monospace;
     font-size: min(1.5vw, 15px);
     transition: opacity 0.3s ease;
