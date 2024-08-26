@@ -5,7 +5,6 @@ body {
         rgba(0, 0, 0, 0.1)
     ),
     url("../../images/bg.jpg");
-    backdrop-filter: blur(1px);
     background-size: cover;
     margin: 0;
     padding: 0;

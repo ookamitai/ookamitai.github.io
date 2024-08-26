@@ -14,15 +14,6 @@ async function randomBlinkWrapper() {
     randomBlink();
 }
 
-function bg() {
-    document.querySelector('body').style.backdropFilter = "blur(3px)";
-}
-
-async function bgWrapper() {
-    await timeout(1000);
-    bg();
-}
-
 function turnOnNeon() {
     const element = document.querySelector('#name-box');
     setTimeout(() => {
@@ -35,7 +26,7 @@ function turnOnNeon() {
 }
 
 function changeDef(){
-    document.querySelector('#name-box').style.opacity = 0.3;
+    document.querySelector('#name-box').style.opacity = 0.8;
 }
 
 function changeDefOut(){
@@ -100,7 +91,7 @@ function cc() {
         cc.style.opacity = 1;   
     });
     f.addEventListener("mouseout", () => {
-        cc.style.opacity = 0.3;
+        cc.style.opacity = 0.7;
     });
 }
 
@@ -157,7 +148,8 @@ function setupbs() {
 
 function question() {
     const over = document.querySelector("#overlay");
-    over.textContent += "THE SCREAMS OF THE DOOMED\n";
+    over.style.opacity = "1";
+    over.style.pointerEvents = "auto";
 }
 
 function setQ() {
@@ -176,6 +168,5 @@ window.addEventListener('load', () => {
     entry();
     cc();
     setupbs();
-    bgWrapper();
     setQ();
 });

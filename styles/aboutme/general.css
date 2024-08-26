@@ -1,13 +1,11 @@
 body {
     background-image: url("../../images/bg.jpg");
-    backdrop-filter: blur(3px);
     background-size: cover;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    padding-bottom: 10vh;
+    clear: both;
 }
 
 a {
