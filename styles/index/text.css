@@ -1,0 +1,124 @@
+#quotes {
+    font-size: 1vw;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+#elipses {
+    cursor: help;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    margin: 5vw;
+    margin-top: 10vh;
+    width: 100%;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+#name-box {
+    display: flex;
+    opacity: 0.05;
+    transition: opacity 0.2s ease;
+}
+
+#light {
+    color: white;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+}
+
+#light:hover {
+    color: white;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+}
+
+#hint {
+    color: rgba(255, 255, 255, 0.3);
+    font-family: "Space Mono", monospace;
+    margin-top: -2em;
+    font-size: min(1.5vw, 15px);
+    opacity: 0;
+    padding: 8px;
+    transition: opacity 0.15s ease, margin-top 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+.glow-text {
+    color: rgba(255, 255, 255, 0.3);
+    font-family: "Space Mono", monospace;
+    font-size: min(2vw, 20px);
+    padding: min(0.5vw, 5px);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0);
+    transition: all 0.3s ease;
+}
+
+.glow-text:hover {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+#desc {
+    color: rgba(255, 255, 255, 0.3);
+    font-family: "Space Mono", monospace;
+    font-style: italic;
+    max-width: fit-content;
+    font-size: min(1.5vw, 15px);
+    transition: all 0.3s ease;
+    margin-right: 45em;
+    margin-top: -2em;
+}
+
+.name {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0px 0px 40px lightblue, 0px 0px 5px lightsteelblue;
+    font-family: "Neonderthaw", cursive;
+    max-width: fit-content;
+    font-size: min(20vw, 200px);
+    transition: all 0.3s ease, opacity 0.05s;
+}
+
+.entry {
+    color: rgba(255, 255, 255, 0.1);
+    font-family: "Space Mono", monospace;
+    max-width: fit-content;
+    font-size: min(1.5vw, 15px);
+    /* border-left: 2px solid rgba(255, 255, 255, 0); */
+    margin: 5px;
+    padding-left: 0.2em;
+    margin-left: -10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.entry:hover {
+    color: rgba(255, 255, 255, 1);
+    padding-left: 0.1em;
+    margin-left: 0px;
+    /* border-left: 2px solid rgba(255, 255, 255, 0.3); */
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
+    font-family: "Space Mono", monospace;
+    font-size: min(1.5vw, 15px);
+    padding: 1em;
+    margin-top: 2em;
+    display: block;
+    width: max-content;
+    padding-left: 100%;
+    padding-right: 100%;
+}
+
+#link {
+    color: rgba(255, 255, 255, 1) !important;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
