@@ -40,10 +40,30 @@ function cc() {
     });
 }
 
+function bright() {
+    document.querySelector("#dim").style.opacity = "0";
+}
+
+function redirectAnimation() {
+    document.querySelector("#dim").style.opacity = "1";
+    setTimeout(() => {
+        window.location.href = "../../";  
+    }, 300);
+}
+
+function setRedirect() {
+    document.querySelector("#return").addEventListener("click", () => {
+        redirectAnimation();
+    });
+}
+
+
 window.addEventListener('load', () => {
+    bright();
     animateTitle(); 
     animateIcon();
     animateText();
     cc();
+    setRedirect();
 });
 

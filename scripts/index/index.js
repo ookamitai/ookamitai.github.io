@@ -65,8 +65,9 @@ function move() {
     }
 }
 
+var useFlashlight = false;
+
 function toggle() {
-    var useFlashlight = false;
     const toggle = document.querySelector("#toggle");
     toggle.addEventListener("click", () => {
         useFlashlight = !useFlashlight;
@@ -147,9 +148,11 @@ function setupbs() {
 }
 
 function question() {
-    const over = document.querySelector("#overlay");
-    over.style.opacity = "1";
-    over.style.pointerEvents = "auto";
+    if (useFlashlight) {
+        const over = document.querySelector("#warn");
+        over.style.opacity = "0.9";
+        over.style.pointerEvents = "auto";
+    }
 }
 
 function setQ() {
@@ -159,7 +162,26 @@ function setQ() {
 }
 
 
+function redirectAnimation() {
+    document.querySelector("#dim").style.opacity = "1";
+    setTimeout(() => {
+        window.location.href = "../../aboutme.html";  
+    }, 300);
+}
+
+function setRedirect() {
+    document.querySelector("#about").addEventListener("click", () => {
+        redirectAnimation();
+    });
+}
+
+function bright() {
+    document.querySelector("#dim").style.opacity = "0";
+}
+
+
 window.addEventListener('load', () => { 
+    bright();
     turnOnNeon();
     randomBlinkWrapper();
     hint();
@@ -169,4 +191,5 @@ window.addEventListener('load', () => {
     cc();
     setupbs();
     setQ();
+    setRedirect();
 });
