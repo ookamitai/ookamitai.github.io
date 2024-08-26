@@ -5,10 +5,23 @@ async function randomBlink() {
     setTimeout(randomBlink, randomTime);
 }
 
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function randomBlinkWrapper() {
+    await timeout(1000);
+    randomBlink();
+}
+
 function turnOnNeon() {
     const element = document.querySelector('#name-box');
     setTimeout(() => {
         element.style.opacity = 1;
+        document.querySelectorAll('.name').forEach((element) => {
+            element.style.textShadow = "0px 0px 50px lightblue, 0px 0px 10px lightsteelblue";    
+        });
+        
     }, 1000);
 }
 
@@ -82,12 +95,65 @@ function cc() {
     });
 }
 
+function bs() {
+    document.querySelector("#name-box").style.marginLeft = "1em";
+    setTimeout(() => {
+        document.querySelector("#blinkpre").textContent = "blog";
+        document.querySelector("#blink").textContent = "s";
+        document.querySelector("#blinkafter").textContent = "paces";
+    }, 200);
+    
+    setTimeout(() => {
+        document.querySelector("#name-box").style.marginLeft = "0em";
+    }, 200);
+}
+
+function git() {
+    document.querySelector("#name-box").style.marginLeft = "1em";
+    setTimeout(() => {
+        document.querySelector("#blinkpre").textContent = "git";
+        document.querySelector("#blink").textContent = "h";
+        document.querySelector("#blinkafter").textContent = "ub";
+    }, 200);
+    
+    setTimeout(() => {
+        document.querySelector("#name-box").style.marginLeft = "0em";
+    }, 200);
+}
+
+function okmt() {
+    document.querySelector("#name-box").style.marginLeft = "1em";
+
+    setTimeout(() => {
+        document.querySelector("#blinkpre").textContent = "o";
+        document.querySelector("#blink").textContent = "o";
+        document.querySelector("#blinkafter").textContent = "kamitai";
+    }, 200);
+
+    setTimeout(() => {
+        document.querySelector("#name-box").style.marginLeft = "0em";
+    }, 200);
+
+}
+
+function setupbs() {
+    const bst = document.querySelector("#bs");
+    bst.addEventListener("mouseover", () => {
+        bs();
+    });
+    bst.addEventListener("mouseout", () => {
+        okmt();
+    });
+}
+
+
 window.addEventListener('load', () => { 
     turnOnNeon();
-    randomBlink(); 
+    randomBlinkWrapper();
     hint();
     move();
     toggle();
     entry();
     cc();
+    setupbs();
 });

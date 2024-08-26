@@ -21,7 +21,7 @@
 #name-box {
     display: flex;
     opacity: 0.05;
-    transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 #light {
@@ -73,7 +73,7 @@
 
 .name {
     color: rgba(255, 255, 255, 1);
-    text-shadow: 0px 0px 40px lightblue, 0px 0px 5px lightsteelblue;
+    text-shadow: 0px 0px 0px lightblue;
     font-family: "Neonderthaw", cursive;
     max-width: fit-content;
     font-size: min(20vw, 200px);
