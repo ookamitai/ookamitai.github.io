@@ -104,7 +104,6 @@
     padding-left: 0.2em;
     margin-left: -10px;
     transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 .entry:hover {
@@ -137,4 +136,9 @@
 
 #warn {
     text-align: center;
+}
+
+#warn-hint {
+    color: rgba(255, 255, 255, 0.5);
+    padding-top: 1vh;
 }
