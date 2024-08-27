@@ -47,7 +47,11 @@ function bright() {
 function redirectAnimation() {
     document.querySelector("#dim").style.opacity = "1";
     setTimeout(() => {
-        window.location.href = "../../";  
+        if (document.querySelector("#lang").textContent == "cn") {
+            window.location.href = "../../index_cn.html";  
+        } else {
+            window.location.href = "../../";  
+        }
     }, 300);
 }
 

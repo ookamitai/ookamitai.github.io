@@ -69,17 +69,17 @@ var useFlashlight = false;
 
 function toggle() {
     const toggle = document.querySelector("#toggle");
-    toggle.addEventListener("click", () => {
+toggle.addEventListener("click", () => {
         useFlashlight = !useFlashlight;
         const m = document.querySelector("#move");
         const t = document.querySelector("#toggle-text");
         if (useFlashlight) {
             m.style.opacity = 1;
-            t.textContent = "[Flashlight ON]";
+            t.textContent = t.textContent.replace("OFF", "ON");
             t.style.opacity = "0.7";
         } else {
             m.style.opacity = 0;
-            t.textContent = "[Flashlight OFF]";
+            t.textContent = t.textContent.replace("ON", "OFF");
             t.style.opacity = "0.3";
         }
     });
@@ -165,7 +165,11 @@ function setQ() {
 function redirectAnimation() {
     document.querySelector("#dim").style.opacity = "1";
     setTimeout(() => {
-        window.location.href = "../../aboutme.html";  
+        if (document.querySelector("#light").textContent == "真理") {
+            window.location.href = "../../aboutme_cn.html";  
+        } else {
+            window.location.href = "../../aboutme.html";  
+        }
     }, 300);
 }
 
