@@ -165,7 +165,11 @@ function setQ() {
 function redirectAnimation() {
     document.querySelector("#dim").style.opacity = "1";
     setTimeout(() => {
-        window.location.href = "../../aboutme.html";  
+        if (document.querySelector("#light").textContent == "真理") {
+            window.location.href = "../../aboutme_cn.html";  
+        } else {
+            window.location.href = "../../aboutme.html";  
+        }
     }, 300);
 }
 
