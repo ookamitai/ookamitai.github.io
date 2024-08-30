@@ -69,10 +69,15 @@ function timeout(ms) {
 
 var index = 1;
 var favs = ["Coding", "UTAU", "Speech Synthesis", "Nintendo Homebrew", "Phonetics", "Calculators", "Mario Kart", "Rhythm Games"];
+var favs_cn = ["写代码", "UTAU", "语音合成", "任天堂 Homebrew", "语音学", "计算器", "马里奥赛车", "音乐游戏"];
 async function animateInterests() {
     document.querySelector("#interest-text").style.opacity = 0;
     await timeout(300);
-    document.querySelector("#interest-text").textContent = favs[index++ % favs.length];
+    if (document.querySelector("#lang").textContent == "cn") {
+        document.querySelector("#interest-text").textContent = favs_cn[index++ % favs.length];
+    } else {
+        document.querySelector("#interest-text").textContent = favs[index++ % favs.length];
+    }
     document.querySelector("#interest-text").style.opacity = 1;
 }
 
