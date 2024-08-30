@@ -93,3 +93,32 @@
     flex-direction: column;
     width: 50%;
 }
+
+.normal-text {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Space Mono", monospace;
+    font-size: min(1.5vw, 15px);
+}
+
+#interest-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#interest-title {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Space Mono", monospace;
+    font-size: min(1.5vw, 15px);
+    opacity: 0.3;
+}
+
+#interest-text {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Space Mono", monospace;
+    font-size: min(3vw, 30px);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}

@@ -60,7 +60,20 @@ function ageTime() {
     var b = 1195084800;
     var now = Date.now() / 1000;
     var percentage = (1 - (d - now) / (d - b)) * 100;
-    document.querySelector("#time-age").textContent = percentage.toFixed(8) + "%";
+    document.querySelector("#time-age").textContent = percentage.toFixed(7) + "%";
+}
+
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+var index = 1;
+var favs = ["Coding", "UTAU", "Speech Synthesis", "Nintendo Homebrew", "Phonetics", "Calculators", "Mario Kart", "Rhythm Games"];
+async function animateInterests() {
+    document.querySelector("#interest-text").style.opacity = 0;
+    await timeout(300);
+    document.querySelector("#interest-text").textContent = favs[index++ % favs.length];
+    document.querySelector("#interest-text").style.opacity = 1;
 }
 
 window.addEventListener('load', () => {
@@ -75,5 +88,6 @@ window.addEventListener('load', () => {
     getDevTime(1609372805, document.querySelector("#time-utau"));
     setInterval(getDevTime, 1000, 1609372805, document.querySelector("#time-utau"));
     ageTime();
-    setInterval(ageTime, 50);
+    setInterval(ageTime, 900);
+    setInterval(animateInterests, 3000);
 });
