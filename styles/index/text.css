@@ -38,6 +38,7 @@
     color: rgba(255, 255, 255, 0.3);
     font-family: "Space Mono", monospace;
     margin-top: -2em;
+    margin-bottom: 2em;
     font-size: min(1.5vw, 15px);
     opacity: 0;
     padding: 8px;
