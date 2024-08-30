@@ -81,11 +81,21 @@ async function animateInterests() {
     document.querySelector("#interest-text").style.opacity = 1;
 }
 
+function animateOther() {
+    setTimeout(() => {
+        document.querySelector("#interest-container").style.opacity = 1;
+    }, 575);
+    setTimeout(() => {
+        document.querySelector(".normal-text").style.opacity = 1;
+    }, 600);
+}
+
 window.addEventListener('load', () => {
     bright();
     animateTitle(); 
     animateIcon();
     animateTimer();
+    animateOther();
     cc();
     setRedirect();
     getDevTime(1650153600, document.querySelector("#time-dev"));
