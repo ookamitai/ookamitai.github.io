@@ -1,0 +1,32 @@
+#block-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 1em;
+    min-width: max-content;
+}
+
+.block-title {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Space Mono", monospace;
+    font-size: min(1.5vw, 15px);
+    opacity: 0.3;
+}
+
+.block-number {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Space Mono", monospace;
+    font-size: min(4vw, 40px);
+    font-weight: bold;
+}
