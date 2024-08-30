@@ -75,5 +75,5 @@ window.addEventListener('load', () => {
     getDevTime(1609372805, document.querySelector("#time-utau"));
     setInterval(getDevTime, 1000, 1609372805, document.querySelector("#time-utau"));
     ageTime();
-    setInterval(ageTime, 100);
+    setInterval(ageTime, 70);
 });
