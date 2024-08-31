@@ -75,6 +75,7 @@ async function animateInterests() {
     await timeout(300);
     if (document.querySelector("#lang").textContent == "cn") {
         document.querySelector("#interest-text").textContent = favs_cn[index++ % favs.length];
+    } else {
         document.querySelector("#interest-text").textContent = favs[index++ % favs.length];
     }
     document.querySelector("#interest-text").style.opacity = 1;
