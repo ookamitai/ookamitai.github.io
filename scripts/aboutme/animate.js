@@ -79,7 +79,6 @@ async function animateInterests() {
         document.querySelector("#interest-text").textContent = favs[index++ % favs.length];
     }
     document.querySelector("#interest-text").style.opacity = 1;
-    index++;
 }
 
 function animateOther() {
