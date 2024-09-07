@@ -45,10 +45,8 @@ function hint() {
     const hint = document.querySelector("#name-box");
     hint.addEventListener("mouseover", () => {
         document.querySelector("#hint").style.opacity = 1;
-        document.querySelector("#hint").style.marginTop = "-1.8em";
     });
     hint.addEventListener("mouseout", () => {
-        document.querySelector("#hint").style.marginTop = "-2em";
         document.querySelector("#hint").style.opacity = 0;
     });
 }

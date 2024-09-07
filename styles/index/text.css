@@ -36,6 +36,7 @@
 }
 
 #hint {
+    z-index: 10;
     color: rgba(255, 255, 255, 0.3);
     font-family: "Space Mono", monospace;
     margin-top: -2em;

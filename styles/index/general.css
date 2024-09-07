@@ -1,6 +1,10 @@
 body {
-    background-color: rgb(20, 20, 20);
+    background: center center linear-gradient(
+        rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.8)
+      ), url("../../images/bg.png"), rgb(20, 20, 20);
     background-size: cover;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     display: flex;
